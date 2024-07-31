@@ -13,7 +13,6 @@ import { COLORS } from "./theme";
 
 // Informatica es la peor de todas. En base a las combinaciones de [orientacion,findecarrera], hay que hacer distinta cantidad de creditos de electivas
 
-
 //// Acerca de cada json de las carreras
 // En los jsons se tiene una lista de objetos donde cada uno representa una materia
 //   de cada materia hay que especificar el id (el codigo), el nombre, la cantidad de creditos que da,
@@ -28,11 +27,20 @@ import { COLORS } from "./theme";
 // ahora quedo que el usuario tiene una "carrera" asociada, aunque sea un plan, así que
 // lo dejamos así
 
-// TODO: cambiar los links de los planes nuevos a medida que aparezcan en la pagina de fiuba
 export const CARRERAS = [
   {
+    id: "sistemasviejo",
+    link: "https://fi.uba.ar/grado/carreras/lic-en-analisis-de-sistemas/plan-de-estudios",
+    ano: 1986,
+    graph: require("./data/sistemas-1986.json"),
+    creditos: {
+      total: 208,
+      electivas: 40,
+    },
+  },
+  {
     id: "sistemas",
-    link: "https://www.fi.uba.ar/grado/carreras/lic-en-analisis-de-sistemas/plan-de-estudios",
+    link: "https://fi.uba.ar/grado/carreras/lic-en-analisis-de-sistemas/plan-de-estudios",
     ano: 2014,
     graph: require("./data/sistemas-2014.json"),
     creditos: {
@@ -58,7 +66,7 @@ export const CARRERAS = [
   },
   {
     id: "informatica",
-    link: "https://www.fi.uba.ar/grado/carreras/ingenieria-en-informatica/plan-de-estudios",
+    link: "https://fi.uba.ar/grado/carreras/ingenieria-en-informatica/plan-de-estudios",
     ano: 1986,
     graph: require("./data/informatica-1986.json"),
     orientaciones: [
@@ -94,13 +102,9 @@ export const CARRERAS = [
   },
   {
     id: "informatica-2020",
-    link: "https://sites.google.com/fi.uba.ar/academica/nuevos-planes-de-estudio/plan-ing-en-inform%C3%A1tica",
+    link: "https://fi.uba.ar/grado/carreras/ingenieria-en-informatica/plan-de-estudios",
     ano: 2020,
     graph: require("./data/informatica-2020.json"),
-    finDeCarrera: [
-      { id: "tesis", materia: "TESIS" },
-      { id: "tpp", materia: "TPP" }
-    ],
     creditos: {
       total: 226,
       electivas: 24,
@@ -112,11 +116,19 @@ export const CARRERAS = [
           color: "enfinal",
         },
       ],
+      materias: [
+        {
+          id: "TIF",
+          nombrecorto: "TIF",
+          bg: COLORS.findecarrera[50],
+          color: "findecarrera",
+        },
+      ],
     },
   },
   {
     id: "agrimensura",
-    link: "https://www.fi.uba.ar/grado/carreras/ingenieria-en-agrimensura/plan-de-estudios",
+    link: "https://fi.uba.ar/grado/carreras/ingenieria-en-agrimensura/plan-de-estudios",
     ano: 2006,
     graph: require("./data/agrimensura-2006.json"),
     finDeCarrera: [
@@ -138,21 +150,33 @@ export const CARRERAS = [
   },
   {
     id: "agrimensura-2020",
-    link: "https://sites.google.com/fi.uba.ar/academica/nuevos-planes-de-estudio/plan-ing-en-agrimensura",
+    link: "https://fi.uba.ar/grado/carreras/ingenieria-en-agrimensura/plan-de-estudios",
     ano: 2020,
     graph: require("./data/agrimensura-2020.json"),
-    finDeCarrera: [
-      { id: "tesis", materia: "TESIS" },
-      { id: "tpp", materia: "TPP" },
-    ],
     creditos: {
       total: 227,
       electivas: 16,
+      checkbox: [
+        {
+          nombre: "Prueba de nivel de idioma inglés",
+          nombrecorto: "Inglés",
+          bg: COLORS.enfinal[50],
+          color: "enfinal",
+        },
+      ],
+      materias: [
+        {
+          id: "TIF",
+          nombrecorto: "TIF",
+          bg: COLORS.findecarrera[50],
+          color: "findecarrera",
+        },
+      ],
     },
   },
   {
     id: "alimentos",
-    link: "https://www.fi.uba.ar/grado/carreras/ingenieria-de-alimentos/plan-de-estudios",
+    link: "https://fi.uba.ar/grado/carreras/ingenieria-de-alimentos/plan-de-estudios",
     ano: 2001,
     graph: require("./data/alimentos-2000.json"),
     creditos: {
@@ -175,8 +199,34 @@ export const CARRERAS = [
     },
   },
   {
+    id: "alimentos-2020",
+    link: "https://fi.uba.ar/grado/carreras/ingenieria-de-alimentos/plan-de-estudios",
+    ano: 2020,
+    graph: require("./data/alimentos-2020.json"),
+    creditos: {
+      total: 243,
+      electivas: 12,
+      checkbox: [
+        {
+          nombre: "Prueba de nivel de idioma inglés",
+          nombrecorto: "Inglés",
+          bg: COLORS.enfinal[50],
+          color: "enfinal",
+        },
+      ],
+      materias: [
+        {
+          id: "TIF",
+          nombrecorto: "TIF",
+          bg: COLORS.findecarrera[50],
+          color: "findecarrera",
+        },
+      ],
+    },
+  },
+  {
     id: "civil",
-    link: "https://www.fi.uba.ar/grado/carreras/ingenieria-civil/plan-de-estudios",
+    link: "https://fi.uba.ar/grado/carreras/ingenieria-civil/plan-de-estudios",
     ano: 2009,
     graph: require("./data/civil-2009.json"),
     creditos: {
@@ -208,21 +258,33 @@ export const CARRERAS = [
   },
   {
     id: "civil-2020",
-    link: "https://sites.google.com/fi.uba.ar/academica/nuevos-planes-de-estudio/plan-ing-civil",
+    link: "https://fi.uba.ar/grado/carreras/ingenieria-civil/plan-de-estudios",
     ano: 2020,
     graph: require("./data/civil-2020.json"),
-    finDeCarrera: [
-      { id: "tesis", materia: "TESIS" },
-      { id: "tpp", materia: "TPP" },
-    ],
     creditos: {
       total: 251,
       electivas: 24,
+      checkbox: [
+        {
+          nombre: "Prueba de nivel de idioma inglés",
+          nombrecorto: "Inglés",
+          bg: COLORS.enfinal[50],
+          color: "enfinal",
+        },
+      ],
+      materias: [
+        {
+          id: "TIF",
+          nombrecorto: "TIF",
+          bg: COLORS.findecarrera[50],
+          color: "findecarrera",
+        },
+      ],
     },
   },
   {
     id: "electricista",
-    link: "https://www.fi.uba.ar/grado/carreras/ingenieria-electricista/plan-de-estudios",
+    link: "https://fi.uba.ar/grado/carreras/ingenieria-electricista/plan-de-estudios",
     ano: 2009,
     graph: require("./data/electricista-2009.json"),
     finDeCarrera: [
@@ -249,8 +311,34 @@ export const CARRERAS = [
     },
   },
   {
+    id: "energia-electrica-2020",
+    link: "https://sites.google.com/fi.uba.ar/academica/nuevos-planes-de-estudio/plan-ing-en-energ%C3%ADa-el%C3%A9ctrica/",
+    ano: 2020,
+    graph: require("./data/energia-electrica-2020.json"),
+    creditos: {
+      total: 250,
+      electivas: 18,
+      checkbox: [
+        {
+          nombre: "Prueba de nivel de idioma inglés",
+          nombrecorto: "Inglés",
+          bg: COLORS.enfinal[50],
+          color: "enfinal",
+        },
+      ],
+      materias: [
+        {
+          id: "TIF",
+          nombrecorto: "TIF",
+          bg: COLORS.findecarrera[50],
+          color: "findecarrera",
+        },
+      ],
+    },
+  },
+  {
     id: "electronica",
-    link: "https://www.fi.uba.ar/grado/carreras/ingenieria-electronica/plan-de-estudios",
+    link: "https://fi.uba.ar/grado/carreras/ingenieria-electronica/plan-de-estudios",
     ano: 2009,
     graph: require("./data/electronica-2009.json"),
     orientaciones: [
@@ -291,13 +379,9 @@ export const CARRERAS = [
   },
   {
     id: "electronica-2020",
-    link: "https://sites.google.com/fi.uba.ar/academica/nuevos-planes-de-estudio/plan-ing-en-electr%C3%B3nica",
+    link: "https://fi.uba.ar/grado/carreras/ingenieria-electronica/plan-de-estudios",
     ano: 2020,
     graph: require("./data/electronica-2020.json"),
-    finDeCarrera: [
-      { id: "tesis", materia: "TESIS" },
-      { id: "tpp", materia: "TPP" },
-    ],
     creditos: {
       total: 228,
       electivas: 24,
@@ -309,11 +393,19 @@ export const CARRERAS = [
           color: "enfinal",
         },
       ],
+      materias: [
+        {
+          id: "TIF",
+          nombrecorto: "TIF",
+          bg: COLORS.findecarrera[50],
+          color: "findecarrera",
+        },
+      ],
     },
   },
   {
     id: "industrial",
-    link: "https://www.fi.uba.ar/grado/carreras/ingenieria-industrial/plan-de-estudios",
+    link: "https://fi.uba.ar/grado/carreras/ingenieria-industrial/plan-de-estudios",
     ano: 2011,
     graph: require("./data/industrial-2011.json"),
     finDeCarrera: [
@@ -341,13 +433,9 @@ export const CARRERAS = [
   },
   {
     id: "industrial-2020",
-    link: "https://sites.google.com/fi.uba.ar/academica/nuevos-planes-de-estudio/plan-ing-industrial",
+    link: "https://fi.uba.ar/grado/carreras/ingenieria-industrial/plan-de-estudios",
     ano: 2020,
     graph: require("./data/industrial-2020.json"),
-    finDeCarrera: [
-      { id: "tesis", materia: "TESIS" },
-      { id: "tpp", materia: "TPP" },
-    ],
     creditos: {
       total: 236,
       electivas: 24,
@@ -359,11 +447,19 @@ export const CARRERAS = [
           color: "enfinal",
         },
       ],
+      materias: [
+        {
+          id: "TIF",
+          nombrecorto: "TIF",
+          bg: COLORS.findecarrera[50],
+          color: "findecarrera",
+        },
+      ],
     },
   },
   {
     id: "mecanica",
-    link: "https://www.fi.uba.ar/grado/carreras/ingenieria-mecanica/plan-de-estudios",
+    link: "https://fi.uba.ar/grado/carreras/ingenieria-mecanica/plan-de-estudios",
     ano: 1986,
     graph: require("./data/mecanica-1986.json"),
     orientaciones: [
@@ -397,8 +493,34 @@ export const CARRERAS = [
     eligeOrientaciones: true,
   },
   {
+    id: "mecanica-2020",
+    link: "https://sites.google.com/fi.uba.ar/academica/nuevos-planes-de-estudio/plan-ing-mec%C3%A1nica/",
+    ano: 2020,
+    graph: require("./data/mecanica-2020.json"),
+    creditos: {
+      total: 250,
+      electivas: 14,
+      checkbox: [
+        {
+          nombre: "Prueba de nivel de idioma inglés",
+          nombrecorto: "Inglés",
+          bg: COLORS.enfinal[50],
+          color: "enfinal",
+        },
+      ],
+      materias: [
+        {
+          id: "TIF",
+          nombrecorto: "TIF",
+          bg: COLORS.findecarrera[50],
+          color: "findecarrera",
+        },
+      ],
+    },
+  },
+  {
     id: "naval",
-    link: "https://www.fi.uba.ar/grado/carreras/ingenieria-naval-y-mecanica/plan-de-estudios",
+    link: "https://fi.uba.ar/grado/carreras/ingenieria-naval-y-mecanica/plan-de-estudios",
     ano: 1986,
     graph: require("./data/naval-1986.json"),
     finDeCarrera: [
@@ -412,7 +534,7 @@ export const CARRERAS = [
   },
   {
     id: "petroleo",
-    link: "https://www.fi.uba.ar/grado/carreras/ingenieria-en-petroleo/plan-de-estudios",
+    link: "https://fi.uba.ar/grado/carreras/ingenieria-en-petroleo/plan-de-estudios",
     ano: 2015,
     graph: require("./data/petroleo-2015.json"),
     finDeCarrera: [
@@ -440,7 +562,7 @@ export const CARRERAS = [
   },
   {
     id: "petroleo-2020",
-    link: "https://sites.google.com/fi.uba.ar/academica/nuevos-planes-de-estudio/plan-ing-en-petr%C3%B3leo",
+    link: "https://fi.uba.ar/grado/carreras/ingenieria-en-petroleo/plan-de-estudios",
     ano: 2020,
     graph: require("./data/petroleo-2020.json"),
     creditos: {
@@ -448,23 +570,25 @@ export const CARRERAS = [
       electivas: 14,
       materias: [
         {
-          id: "TPP1",
-          nombrecorto: "TPP1",
+          id: "TIF",
+          nombrecorto: "TIF",
           bg: COLORS.findecarrera[50],
           color: "findecarrera",
         },
+      ],
+      checkbox: [
         {
-          id: "TPP2",
-          nombrecorto: "TPP2",
-          bg: COLORS.findecarrera[50],
-          color: "findecarrera",
+          nombre: "Prueba de nivel de idioma inglés",
+          nombrecorto: "Inglés",
+          bg: COLORS.enfinal[50],
+          color: "enfinal",
         },
       ],
     },
   },
   {
     id: "quimica",
-    link: "https://www.fi.uba.ar/grado/carreras/ingenieria-quimica/plan-de-estudios",
+    link: "https://fi.uba.ar/grado/carreras/ingenieria-quimica/plan-de-estudios",
     ano: 1986,
     graph: require("./data/quimica-1986.json"),
     finDeCarrera: [
@@ -478,26 +602,28 @@ export const CARRERAS = [
   },
   {
     id: "quimica-2020",
-    link: "https://sites.google.com/fi.uba.ar/academica/nuevos-planes-de-estudio/plan-ing-qu%C3%ADmica",
+    link: "https://fi.uba.ar/grado/carreras/ingenieria-quimica/plan-de-estudios",
     ano: 2020,
     graph: require("./data/quimica-2020.json"),
-    finDeCarrera: [
-      { id: "tesis", materia: "TESIS" },
-      { id: "tpp", materia: "TPP" },
-    ],
     creditos: {
       total: 231,
       electivas: 14,
-    },
-  },
-  {
-    id: "sistemasviejo",
-    link: "https://www.fi.uba.ar/grado/carreras/lic-en-analisis-de-sistemas/plan-de-estudios",
-    ano: 1986,
-    graph: require("./data/sistemas-1986.json"),
-    creditos: {
-      total: 208,
-      electivas: 40,
+      checkbox: [
+        {
+          nombre: "Prueba de nivel de idioma inglés",
+          nombrecorto: "Inglés",
+          bg: COLORS.enfinal[50],
+          color: "enfinal",
+        },
+      ],
+      materias: [
+        {
+          id: "TIF",
+          nombrecorto: "TIF",
+          bg: COLORS.findecarrera[50],
+          color: "findecarrera",
+        },
+      ],
     },
   },
 ];
@@ -513,12 +639,12 @@ export const PLANES = [
   {
     nombre: "Ingeniería de Alimentos",
     nombrecorto: "Alimentos",
-    planes: ["alimentos"],
+    planes: ["alimentos", "alimentos-2020"],
   },
   {
-    nombre: "Ingeniería Electricista",
+    nombre: "Ingeniería en Energía Eléctrica",
     nombrecorto: "Electricista",
-    planes: ["electricista"],
+    planes: ["electricista", "energia-electrica-2020"],
   },
   {
     nombre: "Ingeniería Electrónica",
@@ -548,7 +674,7 @@ export const PLANES = [
   {
     nombre: "Ingeniería Mecánica",
     nombrecorto: "Mecánica",
-    planes: ["mecanica"],
+    planes: ["mecanica", "mecanica-2020"],
   },
   {
     nombre: "Ingeniería Naval y Mecánica",
@@ -565,4 +691,4 @@ export const PLANES = [
     nombrecorto: "Sistemas",
     planes: ["sistemasviejo", "sistemas"],
   },
-]
+];

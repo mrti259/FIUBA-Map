@@ -1,8 +1,4 @@
-import {
-  Collapse,
-  Flex,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Collapse, Flex, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
 import { UserContext } from "../../MapContext";
 import Creditos from "./Creditos";
@@ -15,7 +11,7 @@ const Footer = () => {
   const { logged, user } = React.useContext(UserContext);
 
   return (
-    <Collapse in={logged} position="relative">
+    <Collapse in={logged} position="relative" unmountOnExit>
       <Flex
         alignItems="center"
         bg={useColorModeValue("headerbg", "headerbgdark")}
